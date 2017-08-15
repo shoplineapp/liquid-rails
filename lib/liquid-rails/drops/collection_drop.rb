@@ -83,8 +83,12 @@ module Liquid
         end
 
         def drop_item(item)
-          liquid_drop_class = drop_class || item.drop_class
-          liquid_drop_class.new(item)
+          if item.respond_to?(:to_liquid)
+            item.to_liquid
+          else
+            liquid_drop_class = drop_class || item.drop_class
+            liquid_drop_class.new(item)
+          end
         end
     end
   end
