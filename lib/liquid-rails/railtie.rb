@@ -18,6 +18,10 @@ module Liquid
         [:active_record, :mongoid].each do |orm|
           ActiveSupport.on_load orm do
             Liquid::Rails.setup_drop self
+
+            if self == ActiveRecord::Base
+              Liquid::Rails.setup_drop(ActiveRecord::Relation)
+            end
           end
         end
       end
