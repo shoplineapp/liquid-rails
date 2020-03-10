@@ -2,6 +2,7 @@ require 'liquid-rails/version'
 require 'liquid'
 require 'kaminari'
 require 'active_support/concern'
+require 'action_view'
 
 module Liquid
   module Rails
