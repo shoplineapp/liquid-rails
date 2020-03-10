@@ -9,9 +9,9 @@ module Liquid
 
       private
 
-        def __h__
-          @context.registers[:view]
-        end
+      def __h__
+        @view_context ||= @context.registers[:view]
+      end
     end
   end
 end
