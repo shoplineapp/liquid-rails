@@ -9,8 +9,8 @@
 module Liquid
   module Rails
     class JavascriptTag < ::Liquid::Block
-      include ActionView::Helpers::JavaScriptHelper
-      include ActionView::Helpers::TagHelper
+      include ::ActionView::Helpers::JavaScriptHelper
+      include ::ActionView::Helpers::TagHelper
 
       def render(context)
         javascript_tag(super, type: 'text/javascript')
